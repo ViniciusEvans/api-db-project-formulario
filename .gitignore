@@ -1,5 +1,3 @@
-src/conexao.js
-src/tests
 
 # Logs
 logs
@@ -105,3 +103,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+#task archive
+tasks.txt

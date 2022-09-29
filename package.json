@@ -1,27 +1,42 @@
 {
-    "name": "api-db-project-formulario",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "nodemon src/index.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ViniciusEvans/api-db-project-formulario"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ViniciusEvans/api-db-project-formulario/issues"
-    },
-    "homepage": "https://github.com/ViniciusEvans/api-db-project-formulario#readme",
-    "dependencies": {
-        "cors": "^2.8.5",
-        "dotenv": "^14.3.0",
-        "express": "^4.17.1",
-        "knex": "^0.95.15",
-        "nodemon": "^2.0.15",
-        "pg": "^8.7.1"
-    }
+  "name": "api-db-project-formulario",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.ts",
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:generate ./src/migrations/default",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:run",
+    "migration:revert": "typeorm-ts-node-commonjs -d ./src/data-source.ts migration:revert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniciusEvans/api-db-project-formulario"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniciusEvans/api-db-project-formulario/issues"
+  },
+  "homepage": "https://github.com/ViniciusEvans/api-db-project-formulario#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "knex": "^0.95.15",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.7",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^18.7.13",
+    "@types/yup": "^0.32.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
 }
