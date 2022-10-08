@@ -11,5 +11,6 @@ export const globalErrorHandler = async (
     ? error.message
     : "Internal Server Error";
   const statusCode: number = error.statusCode ?? 500;
+  console.log(error)
   return res.status(statusCode).json({ message });
 };
